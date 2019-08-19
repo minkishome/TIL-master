@@ -1,0 +1,24 @@
+div{
+    border : solid 1px black;
+    padding : 10px 10px 10px 10px;
+    margin: 10px;
+}
+/* padding은 시계방향으로 top, right, bottom, left
+padding-top 1px; 이런 방법과
+padding 10px 1px 1px 13px => top, right, bottom, left 이 순서대로
+margin = 여유공간, 박스와 박스
+*/
+
+div.a{
+    border-style: dotted;
+    border-width: 3px;
+    border-color: red;
+    padding: 20px;
+    margin: 50px 30px;
+    /* border: dashed 3px rebeccapurple; */
+     /* 상하 & 좌우 */
+}
+
+article.like-p{
+    margin: 1rem 0;
+}

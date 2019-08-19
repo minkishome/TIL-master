@@ -1,0 +1,39 @@
+.aa{
+    background-color: goldenrod;
+    padding: 20px;
+
+    
+}
+
+.bb{
+    background-color: rosybrown;
+    padding: 20px;
+    width: 300px
+
+
+}
+
+
+/* inline-block 속성 */
+/* 
+    inline의 한 줄 표시 + block의 margin, padding width height 속성을 가짐
+    content 너비만큼 가로폭
+    display : inline-block 인 요소들 뒤에 공백은 space(4px)
+    상하여백 : margin과 line height로 가능
+
+*/
+
+
+.ib {
+    display: inline-block;
+}
+
+
+.xx{
+    width: 200px;
+    line-height: 5em;
+}
+
+div.big-lh{
+    line-height: 3rem;
+}

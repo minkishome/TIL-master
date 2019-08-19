@@ -1,0 +1,30 @@
+{%extends 'utils/base.html'%}
+
+{%block body%}
+    <h1>Asciify</h1>
+    <p>
+        Input some text below
+    </p>
+    <form action="/utils/output/" method="GET">
+        
+        <div>
+            <label for="word">text</label>
+            <input id="word" name="user-input" type="text"> 
+        </div>
+        <div>
+            <label for="font">font</label>
+            <select name="user-font" id="font">
+                <!-- name이 골라내는 이름, value가 받아들이는 이름 -->
+                {% for font in fonts %}
+                    <option value="{{ font }}">{{ font }}</option>
+                {% endfor %}
+                
+
+            </select>
+        </div>
+        <div>
+            <input type="submit" value="submit">
+        </div>        
+    </form>
+</body>
+{%endblock%}

@@ -1,0 +1,27 @@
+{% extends 'board/base.html' %} 
+ 
+{% block title %}Board Main{% endblock  %}
+
+{% block body %}
+
+
+
+    <h1>Board index</h1>
+<div>
+    {% comment %} TODO : new href  {% endcomment %}
+</div>
+    <div>
+        <a href="/board/articles/new">새 글</a>
+    </div>
+    <div>
+        <ul>
+        {% for article in articles %}
+            <li>
+                <a href="/board/articles/{{article.id}}"> {{article.title}}   {{article.created}}</a>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+
+{% endblock %}
+    

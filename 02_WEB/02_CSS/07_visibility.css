@@ -1,0 +1,22 @@
+.visible{
+    visibility: visible;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+.display-none{
+    /* display 속성이지만 비교해보자 */
+    display: none;
+}
+
+/* Table 관련 속성 */
+table,td{
+    border: 10px solid black;
+}
+/* collapse는 테이블에서만 쓰는거 */
+.collapse{
+    visibility: collapse;
+
+}

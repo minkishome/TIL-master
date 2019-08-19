@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="eg">
+    <!-- 이 문서가 주로 어떤 언어로 쓰이는지 보여줌 -->
+<head>
+    <meta charset="UTF-8">
+    <title>BOXOFFICE</title>
+</head>
+<body>
+     <h1>BOX OFFICE</h1>
+     <ol>
+         {% for movie in movies %} 
+         <!-- html식 반복문 -->
+         <li>{{ movie }}</li>
+         {% endfor %}
+         <!-- 여기서 html식 반복문이 끝난다 -->     
+     </ol>
+     
+</body>
+</html>

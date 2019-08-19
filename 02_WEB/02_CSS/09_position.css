@@ -1,0 +1,71 @@
+/* 
+    position 의 default 값
+    위 => 아래 왼 => 오
+    부모요소 <=> 자식요소 부모의 위치가 기준점
+    좌표값을 줘도 안 먹음.
+    absoloute는 쓰면 망한다.
+
+
+*/
+
+
+.parent{
+    width: 150px;
+    height: 200px;
+    background-color: darkmagenta;
+    border: 1px solid darkgray;
+    margin-top: 30px; margin-left: 30px;
+
+}
+.rel{
+    position: relative;
+    background-color: azure;
+}
+
+.static-box{
+    position: static;
+    background-color: gold;
+    color: red;
+    text-align: center;
+    line-height: 150px;
+}
+.relative-box{
+    position: relative;
+    top: 50px; ; left: 50px;
+    background: goldenrod;
+    text-align: center;
+    height: 150px;
+}
+
+.absoloute-box{
+    /* 부모가 static이면 body 기준으로 움직임
+       부모가 relative면 부모기준으로 움직임 */
+    position: absolute;
+    height: 50px; width: 200px;
+    top: 50px; left: 50px;
+    background: springgreen;
+    text-align: center;
+}
+
+.fixed-box{
+    position: fixed;
+    color: darkgray;
+    text-align: center;
+    background: black;
+}
+
+.sidebar{
+    top: 0;
+    right: 0;
+    width: 15vw;
+    padding: 50% 10px;
+    z-index: 1;
+    /* z인덱스는 3차원을 생각(숫자가 높을수록 제일 앞에 있다.) */
+}
+.footer{
+    bottom: 0;
+    width: 100%;
+    background-color: blue;
+    height: 5vw;
+    
+}

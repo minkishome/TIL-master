@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        h1 {
+            font-size: 100%;
+            font-size: 16px; /* 브라우저 기본 px/100 % */
+        } 
+
+        p {
+            font-size: 1rem; /* 브라우저 기본 폰트 사이즈 == 1rem */
+            color: #cc0000;
+            /*  R   G   B */
+            /* 256 256 256 */
+            /*  */
+            
+            /* color rgb */
+        }
+
+        div{
+            font-size: 150%; /* div의 시작은 300% */
+        }
+
+        div li {
+            font-size: 2em;
+        }
+        div>div {
+            font-size: 0.5em; /* 아래로 내려가면 갈수록 0.5를 계속 받는다(중첩에 중첩) */
+            color: rgb(255, 0, 0); /* 투명도를 표현할 수 있음 */
+        }
+                /* 1em은 부모에게서 상속받은 폰트 크기  */
+    </style>
+</head>
+<body>
+    <div>
+        aaaa
+        <div>
+            bbbbb
+            <div>ccccc
+                <div>ddddd</div>
+            </div>
+        </div>
+    </div>
+    <h1>This is my site</h1>
+    <div>
+        <h2>My cafe</h2>
+        <p>This is great cafe</p>
+        <ul>
+            <li>파스타</li>
+            <li>샐러드</li>
+        </ul>
+    </div>
+
+</body>
+</html>

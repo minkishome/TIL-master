@@ -45,28 +45,3 @@ for test_num in range(tc):
 
 
 
-
-    # z = 1
-    # while z:
-    #      for i in range(1,n - 2):
-    #          back = ls_tu[i][1]
-    #          for j in range(i+1, n-1):
-    #              if back == ls_tu[j][0]:
-    #                  ls[i+1] = ls_tu[j]
-    #
-    #      while 1:
-    #         a = 0
-    #         if ls_tu[a][1] == ls_tu[a+1][0]:
-    #             z = 0
-    #             break
-    #         else:
-    #             for i in range(1, n - 1):
-    #                 forward = ls_tu[i][0]
-    #                 for j in range(i + 1, n):
-    #                     if forward == ls_tu[j][1]:
-    #                         ls_tu.insert(i,ls_tu[j])
-    #             z = 0
-    #             break
-    #         a += 1
-    #
-    # print(ls_tu)

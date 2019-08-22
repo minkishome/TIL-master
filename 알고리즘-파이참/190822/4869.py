@@ -15,4 +15,4 @@ for num in range(test_num):
         result += math.factorial(box_num - i)/(math.factorial(num_of1)*math.factorial(i)) * 2**i # 홀수 일때 모든 경우의 수
 
 
-    print(int(result))
+    print('#%d %d'%(num+1, int(result)))

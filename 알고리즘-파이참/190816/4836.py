@@ -24,10 +24,12 @@ def what_color(ls, num):
 tc = int(input())
 for tc in range(tc):
     color_num = int(input())
-    total_color = []
+    total_color = [0]*color_num
+    #ls = [[0]*100 for _ in range(100)]
     for do in range(color_num):
         non_color = list(map(int,input().split()))
         total_color.append(non_color)
+        print(total_color)
     print('#%d %d' %(tc+1, what_color(total_color,color_num)))
 
 

@@ -7,8 +7,8 @@ sys.stdin = open('4861.txt','r')
 #이중배열
 def find_par(ls1, garow, sen_num):
     #가로에 대한 확인
-    for i in range(garow):
-        for j in range(garow-sen_num+1):
+    for i, k in range(garow):
+        for j, u in range(garow-sen_num+1):
             ls2 = ls1[i][j:j+sen_num+1]
             ls3 = ls1[j:j+sen_num+1][i]
             if ls2 == ls2[::-1]:
@@ -22,7 +22,6 @@ def find_par(ls1, garow, sen_num):
     #             ls3 += ls1[z+num][k]
     #         if ls3 == ls3[::-1]:
     #             return ls3
-
 
 
 
@@ -51,7 +50,7 @@ def find_par(ls1, garow, sen_num):
 
 
 tc = int(input())
-for num in range(10):
+for num in range(tc):
     N, M = map(int,input().split())
     ls_case = []
     for i in range(N):

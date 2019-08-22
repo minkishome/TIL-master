@@ -37,10 +37,10 @@ def find_pali(ls,n):
 
 
 
-for _ in range(10):
+for b in range(1, 11):
     str_len = int(input())
     matrix = []
     for _ in range(8):
         ls_str = list(input())
         matrix.append(ls_str)
-    print(find_pali(matrix, str_len))
+    print('#%d %d' %(b, find_pali(matrix, str_len)))

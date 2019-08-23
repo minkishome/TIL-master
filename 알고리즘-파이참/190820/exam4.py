@@ -50,6 +50,8 @@ for _ in range(10):
     for sero in range(100):
         if ladder[garo][sero] == 1:
             a = down(ladder, garo, sero)
+            print(a)
             if a == None:
+
                 print('#%d %d' %(numnum, sero))
 

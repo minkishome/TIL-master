@@ -31,7 +31,7 @@ for tc in range(test_num):
                     for y_center in range(j+1,j+K-1):
                         plain_center.append(plain[x_center][y_center]) # 초기화 해줘야한다.
                 sum_part = plus -sum(plain_center)
-
+                print(sum_part)
                 ls_sum.append(sum_part)
         print('#%d %d' %(tc+1, max(ls_sum)))
 
@@ -46,5 +46,7 @@ for tc in range(test_num):
                 if k != 0 and k!= K-1:
                     if l != 0 and l != K-1:
                         center_sum += plain[k][l]
+
+        print(part_sum, center_sum)
         result = part_sum - center_sum
         print('#%d %d' %(tc+1, result))

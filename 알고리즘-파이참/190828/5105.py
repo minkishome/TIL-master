@@ -1,15 +1,39 @@
 import sys
-sys. stdin = open('4875.txt', 'r')
+sys.stdin = open('input_10_100.txt', 'r')
 
 
+def ispromising(r, c, maze):
+    global count, short
+    if maze[r][c] == 0:
+        count += 1
+        maze[r][c] = 1
+        return 1
+    elif maze[r][c] == 1:
+        count += 1
+        pass
+    elif maze[r][c] == 2:
+        count += 1
+        return 2
 
 
 def solve_maze(ls, a, b, N): # 리스트와 시작점과 마지막 점
+
+    if ispromising() == 3:
+        pass
+    else:
+        if count < short:
+            for i in dx:
+                for j in dy:
+                    x = alpha[0] + i
+                    y = alpha[1] + j
+                    if x >= 0 and x <= N - 1 and y >= 0 and y <= N - 1:
+                        solve_maze(ls,x,y,N)
+
+
     dx = [1,-1,0,0]
     dy = [0,0,1,-1]
     visit = {(a,b)}
     while visit:
-
         alpha = visit.pop()
 
         for i in dx:

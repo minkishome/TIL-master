@@ -42,30 +42,31 @@ for t in range(int(input())):
     result = list()
     n = int(input())
     arr = [list(map(int, input().split())) for _ in range(n)]
-    backtrack(a, 3, n+1, arr, result)
+    backtrack(a, 3, n, arr, result) # a = idx? k, n, arr = 전체 매트릭스, result =
+
     print("#{} {}".format(t+1, result))
 
-
-def backtrack(a, ls, k, n, res): # a는 더할 값들을 만들어주는 함수, ls는 기본 함수, k는 깊이
-    global min_value
-    k = 0
-    if k == n:
-        return min_value
-    else:
-        for i in range(n): # 각 배열에서 구하는 값
-            a.append(ispromising(a, ls, k, t))
-        for t in range(1,n+1):
-            a[t] =
-        return min(res) # 최소값을 구하자
-
-def ispromising(a, ls, k, t): # 유망도 평가, 해도 되는건지?
-
-    return 1
-
-for t in range(int(input())):
-    min_value = 100
-    result = list()
-    n = int(input())
-    a = [0] * (n+1)
-    matrix = [list(map(int,input().split() for _ in range(n)))]
-    backtrack(a, matrix, n, result)
+#
+# def backtrack(a, ls, k, n, res): # a는 더할 값들을 만들어주는 함수, ls는 기본 함수, k는 깊이
+#     global min_value
+#     k = 0
+#     if k == n:
+#         return min_value
+#     else:
+#         for i in range(n): # 각 배열에서 구하는 값
+#             a.append(ispromising(a, ls, k, t))
+#         for t in range(1,n+1):
+#             a[t] =
+#         return min(res) # 최소값을 구하자
+#
+# def ispromising(a, ls, k, t): # 유망도 평가, 해도 되는건지?
+#
+#     return 1
+#
+# for t in range(int(input())):
+#     min_value = 100
+#     result = list()
+#     n = int(input())
+#     a = [0] * (n+1)
+#     matrix = [list(map(int,input().split() for _ in range(n)))]
+#     backtrack(a, matrix, n, result)

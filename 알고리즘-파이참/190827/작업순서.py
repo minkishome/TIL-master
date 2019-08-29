@@ -16,7 +16,7 @@ for z in range(10):
     for i in range(len(ls)//2): # 1딕셔너리?
         path_dict[ls[2*i]] += [ls[2*i+1]]
     # print(path_dict)
-
+    print(path_dict)
     for num in path_dict.values():
         for i in num:
             if ls_find[i-1] == 0:

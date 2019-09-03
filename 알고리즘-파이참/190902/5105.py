@@ -5,26 +5,27 @@ sys.stdin = open('5105.txt', 'r')
 
 def find(maze, a, b, count):
     global N # 범위 제한
-    if maze[a][b] == 3:
-        return count
-    count_1 = 0  # 모든 방향이 0인지 확인
+ # 다시 돌아가는 방법 정해야함
+      # 모든 방향이 0인지 확인
     dx = [1, -1, 0, 0]
     dy = [0, 0, 1, -1]
 
     for i in range(4):
         x = a + dx[i]
-        y = b+ dy[i]
+        y = b + dy[i]
+
         if 0 <= x < N and 0 <= y < N:
+            if maze[x][y] == 3:
+                return count
+
             if maze[x][y] == 1:
-                count_1 += 1
-            if count_1 == 4:
-                return
+                continue
             if maze[x][y] == 0:
+                maze[x][y] = 1
                 count += 1
-                count_1 = 0
-                find(maze, x, y, count)
-
-
+                return find(maze, x, y, count)
+    else:
+        return 0
 
 
 

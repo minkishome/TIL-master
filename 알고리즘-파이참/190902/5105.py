@@ -2,31 +2,30 @@ import sys
 sys.stdin = open('5105.txt', 'r')
 
 
-def ispromising(maze, r, c, count):
-    if maze[r][c] == 0:
-        maze[r][c] = 1
-        return 1
-    elif maze[r][c] == 1:
-        return 0
-    elif maze[r][c] == 2:
-        return 2
-​
 
 def find(maze, a, b, count):
-    global N
+    global N # 범위 제한
+    if maze[a][b] == 3:
+        return count
+    count_1 = 0  # 모든 방향이 0인지 확인
     dx = [1, -1, 0, 0]
     dy = [0, 0, 1, -1]
+
     for i in range(4):
         x = a + dx[i]
-        y = b + dy[i]
+        y = b+ dy[i]
         if 0 <= x < N and 0 <= y < N:
+            if maze[x][y] == 1:
+                count_1 += 1
+            if count_1 == 4:
+                return
             if maze[x][y] == 0:
-                maze[x][y] = 1
                 count += 1
-                return find(maze, x, y, count)
-            if maze[x][y] == 3:
-                return count
-    return 0
+                count_1 = 0
+                find(maze, x, y, count)
+
+
+
 
 
 test_num = int(input())

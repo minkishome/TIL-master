@@ -5,30 +5,39 @@ sys.stdin = open('input.txt', 'r')
 class Node():
     def __init__(self, data):
         self.data = data
-        self.left = self.right = None
+        self.left = None
+        self.right = None
 
 class BS():
     def __init__(self):
         self.root = None
 
+
     def insert(self, data):
         n = Node(data)
         if self.root is None:
             self.root = n
+            print(self.root)
+
             return
+        else:
+            current = self.root # left, right
 
-        current = self.root
 
-        while True:
-            parent = current
-            if current.left == None:
-                current.left = n
-                break
-            else:
-                current = current.right
-                if current is None:
-                    parent.right = n
-                    break
+            while 1:
+                parent = current
+                if current.left == None:
+                    current = current.left
+                    if current is None:
+                        parent.left = n
+                        break
+
+                else:
+                    current = current.right
+                    if current is None:
+                        parent.right = n
+                        break
+
 
 
 
@@ -36,34 +45,39 @@ class BS():
 
     def in_order_traversal(self):
         def _in_order_traversal(root):
-            if root is None:
-                pass
-            else:
+            if root:
+                # print(root.left)
+                # print(root.right)
                 _in_order_traversal(root.left)
                 print(root.data, end = '')
                 _in_order_traversal(root.right)
         _in_order_traversal(self.root)
 
-    # def inorder_traverse(self):
-    #     if root == None:
-    #         return
-    #     else:
-    #         inorder_traverse(root.left)
-    #         print(root.data, end = '')
-    #         inorder_traverse(root.right)
-
+    def inorder_traverse(self):
+        def inorder_traverse(root):
+            # if root is None:
+            #     return
+            # else:
+            inorder_traverse(root.left)
+            print(root.data, end = '')
+            inorder_traverse(root.right)
+        inorder_traverse(self.root)
 
 
 for tc in range(1, 11):
     N = int(input())
     ls = [list(map(str, input().split())) for _ in range(N)]
-    # print(ls)
+    print(ls)
     sample = BS()
     for x in ls:
+        print(x[1] ,end = '')
         sample.insert(x[1])
     # print(sample.root)
+    print()
 
-    print(sample.inorder_traverse())
+    print(sample.in_order_traversal())
+    print()
+    # print(sample.inorder_traverse())
 
 
 
@@ -122,3 +136,5 @@ for tc in range(1, 11):
     #         elif node.right is None:
     #             node.right = self._insert_value(node.right, data)
     #     return node
+
+

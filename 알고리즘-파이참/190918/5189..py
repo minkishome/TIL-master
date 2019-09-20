@@ -13,19 +13,6 @@ def find_min(x, summ, z):
                 find_min(i, summ + ls[x][i], z + 1)
                 visited[i] = False
 
-            #
-            # if i not in stack and ls[x][i] != 0:
-            #     stack.append(i)
-            #     find_min(i, summ + ls[x][i])
-
-            # if not visited[i] and ls[x][i] != 0:
-            #     if i not in stack:
-            #         stack.append(i)
-            #         visited[i] = True
-            #         find_min(z+1, summ + ls[z][i])
-            #         visited[i] = False
-
-
 
 
 

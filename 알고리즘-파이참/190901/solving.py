@@ -40,15 +40,7 @@ for tc in range(1, test_num+1):
             if ls1[min][0]*ls1[min][1] < ls1[j][0]*ls1[j][1]:
                 min = j
             ls1[min], ls1[j] = ls1[j], ls1[min]
-    # for i in range(len(ls1)-1):
-    #     for j in range(i+1, len(ls1)):
-    #         if ls1[i][0] * ls1[i][1] == ls1[j][0] * ls1[j][1]:
-    #             c = ls1[i][0]
-    #             d = ls1[j][0]
-    #             if c < d:
-    #                 pass
-    #             elif d < c:
-    #                 ls1[i], ls1[j] = ls1[j], ls1[i]
+
     string = ''
     # print(ls1)
     result = []

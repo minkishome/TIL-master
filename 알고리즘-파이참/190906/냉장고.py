@@ -1,7 +1,7 @@
 import sys, itertools
 sys.stdin = open('냉장고.txt', 'r')
 
-def calc (a,b): # a,b는 두개의 숫자를 가진 리스트
+def calc(a,b): # a,b는 두개의 숫자를 가진 리스트
     ax, ay = a
     bx, by = b
     return abs(ax-bx) + abs(ay-by)

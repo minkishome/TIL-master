@@ -24,11 +24,6 @@ def queen(ls, x, y, z): # y는 1씩 추가만 x만 바꿔가면서 변경
                         k += 1
                     else:
                         break
-
-
-                # for k in ls2:
-                #     print(k)
-                # print()
             for i in range(n):
                 queen(ls2, z+1, i, z+1)
 

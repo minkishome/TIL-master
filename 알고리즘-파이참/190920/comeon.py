@@ -1,5 +1,5 @@
 import sys, copy
-sys.stdin = open('comeon.txt', 'r')
+sys.stdin = open('comeon.txt', 'r') # 배수가 될때 시간이 입국심사 완료
 
 def find(z, summ):
     global min_sum, cnt

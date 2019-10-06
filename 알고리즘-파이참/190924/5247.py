@@ -1,53 +1,45 @@
 import sys
 sys.stdin = open('5247.txt', 'r')
 
-# +1 -1 *2 -10
+from collections import deque
 
-def do_someting(ls_do, b):
-    global alpha
-    if ls_check[M] != 0:
-        return
+T = int(input())
 
-    else:
-        # ls_k = ls_do[len(ls_do)-d:]
-
-        ls_k = []
-        for a in ls_do:
-            ls2 = [a+1, a-1, a-10, 2*a]
-            for z in ls2:
-                if 0 < z < 4*alpha:
-                    if ls_check[z] == 0:
-                        ls_check[z] = b
-                        ls_k.append(z)
-        do_someting(ls_k, b+1)
-
-
-
-for tc in range(1, int(input())+1):
+for t in range(T):
     N, M = map(int, input().split())
-    alpha = max(N,M)
-    ls_check = [0] * (4*alpha)
-    visited = [0] * (4*alpha) # 처리해줘야함
-    ls_do = [N]
-    do_someting(ls_do,0)
-    print('#%d %d' %(tc, ls_check[M]+1))
+    visited = [0] * 1000000
+    queues = deque()
+    queues.append([N, 0])
+    while queues[-1][0] != M:
+        if not visited[queues[0][0]]:
+            if queues[0][0] > M:
+                if 0 < queues[0][0] - 1 <= 1000000:
+                    queues.append([queues[0][0] - 1, queues[0][1] + 1])
+                    if queues[-1][0] == M:
+                        break
+                if 0 < queues[0][0] - 10 <= 1000000:
+                    queues.append([queues[0][0] - 10, queues[0][1] + 1])
+                    if queues[-1][0] == M:
+                        break
+                visited[queues[0][0]] = 1
+            else:
+                if 0<queues[0][0]-1<=1000000:
+                    queues.append([queues[0][0]- 1, queues[0][1]+1])
+                    if queues[-1][0] == M:
+                        break
+                if 0<queues[0][0]-10<=1000000:
+                    queues.append([queues[0][0]- 10, queues[0][1]+1])
+                    if queues[-1][0] == M:
+                        break
+                if 0<queues[0][0]+1<=1000000:
+                    queues.append([queues[0][0] + 1, queues[0][1]+1])
+                    if queues[-1][0] == M:
+                        break
+                if 0 < queues[0][0] *2 <= 1000000:
+                    queues.append([queues[0][0] * 2, queues[0][1]+1])
+                    if queues[-1][0] == M:
+                        break
+                visited[queues[0][0]] = 1
+        queues.popleft()
 
-
-
-
-
-    # else:
-    #     if min_val > c:
-    #         if a*2 < b:
-    #             return do_someting(2*a, b, c+1)
-    #         else:
-    #             if b - a < 10:
-    #                 return do_someting(a+1, b, c+1)
-    #             elif a - b < 10:
-    #                 return do_someting(a-1, b, c+1)
-    #
-
-    # elif a*2 > b:
-    #     if b - a > a*2 - b:
-    #         do_someting(2*a -10, b, c+2)
-
+    print('#{} {}'.format(t+1, queues[-1][1]))

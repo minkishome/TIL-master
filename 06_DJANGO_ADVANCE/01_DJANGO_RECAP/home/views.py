@@ -10,13 +10,13 @@ def guess(request):
     
 def answer(request):
     count = 0
-    if request.GET.get('q1') == '1108':
+    if request.POST.get('q1') == '1108':
         count += 1
-    if request.GET.get('q2') == '부산':
+    if request.POST.get('q2') == '부산':
         count += 1
-    if request.GET.get('q3') == '리버풀':
+    if request.POST.get('q3') == '리버풀':
         count += 1
-    if request.GET.get('q4') == '레드':
+    if request.POST.get('q4') == '레드':
         count += 1
     
 

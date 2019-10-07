@@ -6,6 +6,7 @@
 {% block body %}
     <h1>질문지</h1>
     <form action="{% url 'home:answer' %}" method="POST" > 
+        <!-- POST 사용시 {% csrf_token %} 필수로 사용  -->
         {% csrf_token %}
         <div>
             <label for="q1">내 생일은?</label>

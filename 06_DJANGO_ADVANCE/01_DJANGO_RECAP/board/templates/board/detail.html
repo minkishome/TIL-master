@@ -7,4 +7,23 @@
     <p>
         {{article.content}}
     </p>
+
+    <div>
+        <a href="{% url 'board:edit' article.id %}">
+            <button>Edit</button>
+        </a>
+    </div>
+    {% comment %} <div>
+        <a href="{% url 'board:delete' article.id %}">
+            <button>Delete</button>
+        </a>
+    </div> {% endcomment %}
+<div>
+    <form action="{% url 'board:delete' article.id %}" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="삭제" onclick="return confirm('really?')">
+    </form>
+
+</div>
+
 {% endblock body %}

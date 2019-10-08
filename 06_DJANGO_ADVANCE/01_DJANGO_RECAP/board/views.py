@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.decorators.http import require_GET, require_POST
-
+from IPython import embed
 from .models import Article
+from .forms import ArticleModelForm
+
 # Create your views here.
 
 @require_GET
@@ -24,33 +26,46 @@ def detail(request, id):
         'article': article,
     })
 
-@require_GET
 def new(request):
-    return render(request, 'board/new.html')
+    if request.method == 'POST':
+        form = ArticleModelForm(request.POST)
+        embed()
+        if form.is_valid():
+            article = form.save()
+            return redirect(article)
+    else:
+        form = ArticleModelForm()
+        # return redirect(article)
+        # article = Article()
+        # article.title = request.POST.get('title')
+        # article.content = request.POST.get('content')
+        # article.save()
+        # return redirect(article)
 
-@require_POST
-def create(request):
-    article = Article()
-    article.title = request.POST.get('title')
-    article.content = request.POST.get('content')
-    article.save()
-    return redirect('board:detail', article.id)
+    return render(request, 'board/new.html', {
+        'form' : form,
+    })
+        
 
 
-@require_GET
+
+
+
 def edit(request, id):
     article = get_object_or_404(Article, id=id)
-    return render(request, 'board/edit.html', {
-        'article': article,
-    })
-    
-@require_POST
-def update(request, id):
-    article = get_object_or_404(Article, id=id)
-    article.title = request.POST.get('title')
-    article.content = request.POST.get('content')
-    article.save()
-    return redirect('board:detail', article.id)
+    if request.method == 'POST':
+        article = get_object_or_404(Article, id=id)
+        article.title = request.POST.get('title')
+        article.content = request.POST.get('content')
+        article.save()
+        return redirect(article)
+        
+    else:
+       return render(request, 'board/edit.html', {
+            'article': article,
+        })
+
+
 
 @require_POST
 def delete(request, id):

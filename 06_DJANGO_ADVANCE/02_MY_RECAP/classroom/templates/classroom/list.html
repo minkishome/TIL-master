@@ -1,0 +1,21 @@
+{% extends 'classroom/base.html' %}
+
+{% block title %} STUDENT list {% endblock title %}
+
+{% block body %}
+<h1>STUDENT list</h1>
+<a href="{% url 'classroom:new' %}">New student</a>
+
+<ul class="list-group">
+    {% for student in students  %}
+        <li class="list-group-item" >
+            <a href= "{% url 'classroom:detail' student.id %}">
+                {{student.name}}
+            </a>
+        
+        </li>
+    {% endfor %}
+</ul>
+
+
+{% endblock body %}

@@ -1,0 +1,31 @@
+{% extends 'classroom/base.html' %}
+
+{% block title %}
+{% endblock title %}
+
+{% block body %}
+    <div>
+      {{student.name}}
+    </div>
+    <div>
+        {{student.age}}
+    </div>
+    <div>
+        {{student.major}}
+    </div>
+
+    <div>
+        <a href="{% url 'classroom:edit' student.id %}">
+            <botton>EDIT</botton>        
+        </a>
+
+        <a href="{% url 'classroom:list' %}"><botton>LIST</botton> </a>
+
+
+    <form action="{% url 'classroom:delete' student.id %}" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="삭제" onclick="return confirm('really?')">
+    </form>
+    </div>
+
+{% endblock body %}

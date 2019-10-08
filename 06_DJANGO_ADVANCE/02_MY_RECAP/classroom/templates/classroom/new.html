@@ -1,0 +1,27 @@
+{% extends 'classroom/base.html' %}
+{% block title %}
+{% endblock %}
+
+{% block body %}
+<h1>New student</h1>
+
+<form action="{% url 'classroom:create' %}" method = "POST">
+    {% csrf_token %}
+    <div class="input-group mb-3">
+        <label for="name">이름:</label>
+        <input class="form-control" id ="name" name = "name">
+    </div>
+
+    <div class="input-group mb-3">
+        <label for="age">나이:</label>
+        <input class="form-control" id ="age" name = "age">
+    </div>
+    <div class="input-group mb-3">
+        <label for="major">전공:</label>
+        <input class="form-control" id ="major" name = "major">
+    </div>
+    <div>
+        <input class="form-control" type="submit" value = "제출!">
+    </div>
+</form>
+{% endblock %}

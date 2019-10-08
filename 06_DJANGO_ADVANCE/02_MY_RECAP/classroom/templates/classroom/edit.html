@@ -1,0 +1,27 @@
+{% extends 'classroom/base.html' %}
+{% block title %}
+{% endblock %}
+
+{% block body %}
+<h1>Edit 학생</h1>
+
+<form action="{% url 'classroom:update' student.id %}" method = "POST">
+    {% csrf_token %}
+    <div>
+        <label for="name">이름 : </label>
+        <input id ="name" name = "name" value = "{{ student.name }}">
+    </div>
+
+    <div>
+        <label for="age">나이 : </label>
+        <input id ="age" name = "age" value = "{{ student.age }}">
+    </div>
+    <div>
+        <label for="major">전공 : </label>
+        <input id ="major" name = "major" value = "{{ student.major }}">
+    </div>
+    <div>
+        <input type="submit" value = "제출!">
+    </div>
+</form>
+{% endblock %}

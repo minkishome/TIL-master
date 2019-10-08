@@ -18,12 +18,17 @@
             <button>Delete</button>
         </a>
     </div> {% endcomment %}
-<div>
-    <form action="{% url 'board:delete' article.id %}" method="POST">
-        {% csrf_token %}
-        <input type="submit" value="삭제" onclick="return confirm('really?')">
-    </form>
+    <div>
+        <form action="{% url 'board:delete' article.id %}" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="삭제" onclick="return confirm('really?')">
+        </form>
 
-</div>
+    </div>
+    <div>
+        <a href="{% url 'board:list' %}">
+            <button>LIST</button>
+        </a>
+    </div>
 
 {% endblock body %}

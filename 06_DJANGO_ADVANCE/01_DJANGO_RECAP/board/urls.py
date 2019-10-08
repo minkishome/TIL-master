@@ -12,12 +12,10 @@ urlpatterns = [
     path('articles/<int:id>/', views.detail, name = 'detail'),
     # create 글 쓰기 new render
     path('articles/new/', views.new, name='new'),
-    # create 글 저장 create
-    path('articles/create/', views.create, name='create'),
     # Update 글 수정하기(edit)
     path('articles/<int:id>/edit/', views.edit, name = 'edit'),
     # Update 글 실제 수정 update
-    path('articles/<int:id>/update/', views.update, name = 'update'),
+    #path('articles/<int:id>/update/', views.update, name = 'update'),
     #Del   
     path('aritcles/<int:id>/delete/', views.delete, name = 'delete'),
 

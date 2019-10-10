@@ -4,10 +4,6 @@
 
 {% block body %}
 <h1>New article</h1>
-<form method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit">
-</form>
+{% include 'board/_form.html' %}
     {% comment %} {% include 'board/_form.html' %} {% endcomment %}
 {% endblock %}

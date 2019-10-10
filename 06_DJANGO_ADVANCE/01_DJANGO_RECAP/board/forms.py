@@ -1,5 +1,5 @@
 from django import forms
-from .models import Article
+from .models import Article, Comment
 
 # forms.Form => Data 입력 및 검증
 
@@ -9,4 +9,11 @@ class ArticleModelForm(forms.ModelForm):
     title = forms.CharField(min_length=2)
     class Meta:
         model = Article
+        fields = '__all__'
+
+class CommentModelFora(forms.ModelForm):
+    content = forms.CharField(min_length=2, max_length=200) # 200을 검증
+    
+    class Meta:
+        modedl = Comment
         fields = '__all__'

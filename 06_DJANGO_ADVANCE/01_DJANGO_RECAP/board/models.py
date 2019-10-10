@@ -8,5 +8,8 @@ class Article(models.Model):
     content = models.TextField()
 
     def get_absolute_url(self):
-        return reverse("board:detail", kwargs={"id": self.id})
-    
+        return reverse("board:article_detail", kwargs={"article_id": self.id})
+
+class Comment(models.Model):
+    content = models.CharField(max_length=1)
+    article = models.ForeignKey(Article, on_delete=models.CASCADE)

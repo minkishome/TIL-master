@@ -4,6 +4,14 @@
 
 {% block body %}
     <h1>{{ article.title}}</h1>
+    <div>
+        <small>
+        {{article.created_at}}
+        </small>
+        <small>
+        {{article.updated_at}}
+        </small>
+    </div>
     <p>
         {{article.content}}
     </p>

@@ -20,7 +20,7 @@ def new_article(request):
             # 유효하다면 form 을 저장한다.
             article = form.save()
             # 저장한 article 로 redirect 한다.
-            return redirect(article) # == redirect('board:article_detail', article.id)
+            return redirect(article) # == redirect('board:article_detail', article.id)  
          # else 문은 밑에 중복되니까 생략 가능
         # 유효하지 않는 form 이라면
         # else:
@@ -43,6 +43,8 @@ def article_list(request):
     return render(request, 'board/list.html',{
         'articles' : articles,
     })
+
+
 @require_http_methods(['GET', 'POST'])
 def edit_article(request, article_id):
     article = get_object_or_404(Article, id = article_id)
@@ -60,13 +62,6 @@ def edit_article(request, article_id):
 
 
         # return redirect(aritcle)
-    else:
-        article = get_object_or_404(Article, id = article_id)  
-
-        form = ArticleModelForm(instance=article)
-        return render(request, 'board/edit.html', {
-            'form' : form,
-        })        
 
 def article_detail(request, article_id):
     article = get_object_or_404(Article, id = article_id)
@@ -75,6 +70,7 @@ def article_detail(request, article_id):
         'article' : article,
         'comments' : comments,
     })
+    # return redirect(aritcle)
 
 
 @require_POST

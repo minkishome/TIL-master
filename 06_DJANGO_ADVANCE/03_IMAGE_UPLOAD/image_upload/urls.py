@@ -22,7 +22,8 @@ from django.conf import settings  # MASTER_APP/setting.py
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('sns.urls')),
+    path('newsfeed/', include('sns.urls')),
+    path('accounts/', include('accounts.urls')),
     
 ] 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

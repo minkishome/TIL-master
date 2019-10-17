@@ -11,7 +11,7 @@ class ArticleModelForm(forms.ModelForm):
         model = Article
         fields = '__all__'
 
-class CommentModelFora(forms.ModelForm):
+class CommentModelForm(forms.ModelForm):
     content = forms.CharField(min_length=2, max_length=200) # 200을 검증
     
     class Meta:

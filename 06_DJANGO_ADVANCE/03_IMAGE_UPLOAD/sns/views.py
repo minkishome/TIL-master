@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.views.decorators.http import require_GET, require_POST
+from django.views.decorators.http import require_GET, require_POST, require_http_methods
 from django.contrib.auth.decorators import login_required
 
 from .models import Posting, Comment
@@ -19,9 +19,11 @@ def posting_list(request):
 def posting_detail(request, posting_id):
     posting = get_object_or_404(Posting, id = posting_id)
     comments = posting.comments.all()
+    is_like = True if posting.likes_users.filter(id=request.user.id).exists() else False
     return render(request, 'sns/posting_detail.html',{  
         'posting': posting,  
-        'comments':comments,      
+        'comments':comments,
+        'is_like' : is_like
     })
 
 
@@ -43,7 +45,9 @@ def create_posting(request):
 def create_posting(request):
     form = PostingModelForm(request.POST, request.FILES) #검증 & 저장 준비
     if form.is_valid(): #검증
-        posting = form.save() #저장 => Posting 객체 return
+        posting = form.save(commit=False) #저장 => Posting 객체 return
+        posting.user = request.user
+        posting.save()
         return redirect(posting)
     else:
         return redirect('sns:posting_list')
@@ -77,3 +81,29 @@ def delete_comment(request,posting_id, comment_id):
     comment = get_object_or_404(Comment, posting_id = posting_id,  id = comment_id )
     comment.delete()
     return redirect(comment.posting)
+
+
+@login_required
+@require_POST
+def toggle_like(request, posting_id):
+    user = request.user
+    posting = get_object_or_404(Posting, id = posting_id)
+    if posting.likes_users.filter(id=user.id).exists():
+        posting.likes_users.remove(user)
+    else:
+        posting.likes_users.add(user)
+
+
+    # if user in posting.likes_users.all():
+    #     posting.likes_users.remove(user)
+    # else:
+    #     posting.likes_users.add(user)
+    return redirect(posting)
+
+# @login_required
+# @require_POST
+# def dislike(request, posting_id):
+#     user = request.user
+#     posting = get_object_or_404(Posting, id = posting_id)
+#     posting.likes_users.remove(user)
+#     return redirect(posting)

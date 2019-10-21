@@ -16,7 +16,31 @@
       {% endif %}
 
       <div class="card-body">
+      <div class="row">
+        <div class="col-2">
+        
+        </div>
         <i class="{{ posting.icon }} fa-2x"></i>
+        <div class="col-4">
+        <small>{{posting.likes_users.count}}명이 좋아합니다.</small>
+        </div>
+        <div class="col-2">
+          <form action="{% url 'sns:like' posting.id %}" method='POST' >
+          {% csrf_token %}
+          <button>
+            {% if user is is_like %}
+            Dislike
+            {% else %}
+            Like
+            
+            {% endif %}
+          </button>
+          </form>
+        </div>
+
+
+      </div>
+        {% comment %} <i class="{{ posting.icon }} fa-2x"></i> {% endcomment %}
         <hr>
         <div class="row">
           <div class="col-10">

@@ -6,7 +6,7 @@ f= Faker()
 
 
 class User(AbstractUser):
-    fans = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='star', blank=True)
+    fans = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='stars')
 
 
     def __str__(self):

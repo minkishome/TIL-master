@@ -3,8 +3,12 @@ from . import views
 
 app_name = 'postings'
 
+#insta
 urlpatterns = [
-    path('signup/', views.signup, name='signup'),
-    path('login/', views.login, name='login'),
-    path('logout/', views.logout, name='logout'),
+    path('<int:posting_id>/', views.posting_detail, name='posting_detail'),
+    path('', views.posting_list, name='posting_list'),
+    path('create/', views.create_posting, name='create_posting'),
+    path('<int:posting_id>/update', views.update_posting, name='update_posting'),
+    path('<int:posting_id>/delete', views.delete_posting, name='delete_posting'),
+
 ]

@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'bootstrap4',
     'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -58,7 +59,9 @@ ROOT_URLCONF = 'instagram.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -125,7 +128,7 @@ AUTH_USER_MODEL = 'accounts.User'
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-
+    os.path.join(BASE_DIR, 'assets'),
 ]
 
 

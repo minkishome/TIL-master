@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cats and Dogs</title>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="getCatImage">
+            냐옹
+        </button>
+        <button v-on:click="getDogImage">
+            멍멍
+        </button>
+        <span>냐옹: {{ catCount }}</span>
+        <span>멍멍: {{ dogCount }}</span>
+        <div>
+            <img 
+            v-for="image in imageUrls"
+            v-bind:src="image"
+            alt="animal-image" 
+            width="200px"
+            height="100px"
+            >
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        const app = new Vue({
+            el:"#app",
+            data: {
+                // 맨 처음 app이 Load 되었을 때의 data
+                catCount : 0,
+                dogCount : 0,
+                imageUrls : [],
+            },
+            methods: {              // methods 에서 key : [VALUE : 절대 ()=>{} XXX];
+                getCatImage: function () {
+                    const URL = "https://api.thecatapi.com/v1/images/search";
+                    axios.get(URL)
+                        //.then(resJSON => resJSON.json()) // resJSON === JSON문자열
+                        .then(res => {
+                            this.imageUrls.push(res.data[0].url);
+                            this.catCount++;
+                        })
+                },
+                getDogImage: function () {
+                    const URL = "https://dog.ceo/api/breeds/image/random";
+                    axios.get(URL)
+                        .then(res => {
+                            this.imageUrls.push(res.data.message);
+                            this.dogCount++;
+                        })
+                        // .then(resData => this.imageUrls.push(resData.data.message));
+
+                }, 
+            },
+        })
+    </script>
+    
+</body>
+</html>

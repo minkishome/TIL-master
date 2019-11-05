@@ -25,3 +25,19 @@ store_options = set(range(c_len))
 print(store_options)
 print(dist)
 
+min_cnt = 9999999999
+for option in itertools.combinations(store_options, m):
+    cnt = 0
+    for j in range(h_len):
+        tmp = 99999
+        for i in option:
+            if dist[i][j] < tmp:
+                tmp = dist[i][j]
+        cnt += tmp
+        if cnt > min_cnt:
+            break
+
+    if cnt < min_cnt:
+        min_cnt = cnt
+
+print(min_cnt)

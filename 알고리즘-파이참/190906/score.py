@@ -1,42 +1,12 @@
-import sys
-import time
-sys.stdin = open('score.txt', 'r')
+import math
 
-stime(time)
-# T = int(input())
-# for tc in range(1, T+1):
-#     N = int(input())
-#     scores = list(map(int, input().split()))
-#     results = [0]
-#     for i in scores:
-#         for j in range(len(results)):
-#             results.append(i + results[j])
-#         results = list(set(results))
-#     res = len(set(results))
-#     print('#%d %d' % (tc, res))
-
-
-# def make_score(depth, summ):
-#     if depth == N:
-#         return
-#
-#     else:
-#         for i in range(0,N):
-#             if not visited[i]:
-#                 visited[i] = True
-#                 new_summ = summ + score_list[i]
-#                 score_set.add(new_summ)
-#                 make_score(depth+1, new_summ)
-#                 visited[i] = False
-#
-#
-#
-#
-# for tc in range(int(input())):
-#     N = int(input()) # 점수갯수
-#     score_list = list(map(int, input().split()))
-#     score_set = set()
-#     visited = [0] * (N+1)
-#     make_score(0,0)
-#     score_set.add(0)
-#     print('#%d %d' %(tc+1, len(score_set)))
+#126.628144987551// 경도   37.4715005347388 // 위도
+pi = math.pi
+c = 37.4715005347388 - math.asin(math.sin(5/(2*6317)))*180/pi
+print(c)
+d = abs(37.4715005347388 - c)
+print(d)
+a = 126.628144987551 +(180/pi)*2*math.asin(math.sin(5/(2*6371))/math.cos(37.4715005347388))
+print(a)
+x = abs(126.628144987551 - a)
+print(x)

@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba3ec9d6-c202-4f9a-a847-3be3b22e91aa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/190904/sam.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/코딩코딩/기출3/국경.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/코딩코딩/기출3/치킨.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/코딩코딩/기출4/사다리.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/190906/score.py" beforeDir="false" afterPath="$PROJECT_DIR$/190906/score.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/코딩코딩/기출4/dragon.py" beforeDir="false" afterPath="$PROJECT_DIR$/코딩코딩/기출4/dragon.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,24 +12,41 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="알고리즘-파이참" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/코딩코딩/기출3/국경.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="41" column="16" lean-forward="true" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
+            <state relative-caret-position="1025">
+              <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/코딩코딩/기출4/dragon.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/코딩코딩/기출3/치킨.py">
+        <entry file="file://$PROJECT_DIR$/코딩코딩/기출4/사다리.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+            <state relative-caret-position="425">
+              <caret line="35" column="71" selection-start-line="35" selection-start-column="71" selection-end-line="35" selection-end-column="71" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/코딩코딩/NM3.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -89,14 +104,15 @@
         <option value="$PROJECT_DIR$/190906/score.py" />
         <option value="$PROJECT_DIR$/코딩코딩/기출3/국경.py" />
         <option value="$PROJECT_DIR$/코딩코딩/기출3/치킨.py" />
+        <option value="$PROJECT_DIR$/코딩코딩/기출4/dragon.py" />
+        <option value="$PROJECT_DIR$/코딩코딩/기출4/사다리.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="951" />
-    <option name="y" value="-9" />
     <option name="width" value="978" />
-    <option name="height" value="1048" />
+    <option name="height" value="1039" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -128,6 +144,12 @@
               <item name="알고리즘-파이참" type="b2602c69:ProjectViewProjectNode" />
               <item name="알고리즘-파이참" type="462c0819:PsiDirectoryNode" />
               <item name="코딩코딩" type="462c0819:PsiDirectoryNode" />
+              <item name="2회차" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="알고리즘-파이참" type="b2602c69:ProjectViewProjectNode" />
+              <item name="알고리즘-파이참" type="462c0819:PsiDirectoryNode" />
+              <item name="코딩코딩" type="462c0819:PsiDirectoryNode" />
               <item name="stack" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -135,6 +157,12 @@
               <item name="알고리즘-파이참" type="462c0819:PsiDirectoryNode" />
               <item name="코딩코딩" type="462c0819:PsiDirectoryNode" />
               <item name="기출3" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="알고리즘-파이참" type="b2602c69:ProjectViewProjectNode" />
+              <item name="알고리즘-파이참" type="462c0819:PsiDirectoryNode" />
+              <item name="코딩코딩" type="462c0819:PsiDirectoryNode" />
+              <item name="기출4" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -163,7 +191,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.치킨">
+  <component name="RunManager" selected="Python.사다리">
     <configuration name="보물" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="알고리즘-파이참" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -177,6 +205,48 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/백준/보물.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="사다리" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="알고리즘-파이참" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/코딩코딩/기출4" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/코딩코딩/기출4/사다리.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="사다리" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="알고리즘-파이참" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/코딩코딩/기출4" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/코딩코딩/기출4/사다리.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -292,8 +362,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.치킨" />
-        <item itemvalue="Python.국경" />
+        <item itemvalue="Python.사다리" />
         <item itemvalue="Python.score" />
         <item itemvalue="Python.samsamsam" />
         <item itemvalue="Python.보물" />
@@ -314,10 +383,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="761" y="-7" width="782" height="838" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" weight="0.25165126" />
+      <window_info id="Favorites" order="0" sideWeight="0.5018657" side_tool="true" weight="0.25100672" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49813432" weight="0.25099075" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -325,7 +394,7 @@
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" />
       <window_info anchor="bottom" id="Version Control" order="5" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.23229462" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.22804533" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -371,13 +440,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/190822/4869.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/190821/4866.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -643,17 +705,47 @@
     <entry file="file://$PROJECT_DIR$/190906/samsamsam.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/코딩코딩/기출3/국경.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="41" column="16" lean-forward="true" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/코딩코딩/기출3/치킨.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/코딩코딩/기출3/국경.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1025">
+          <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/코딩코딩/기출4/dragon.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/코딩코딩/2회차/black.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-219" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/코딩코딩/2회차/size.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-544" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/코딩코딩/2회차/분해합.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/코딩코딩/NM3.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/코딩코딩/기출4/사다리.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="35" column="71" selection-start-line="35" selection-start-column="71" selection-end-line="35" selection-end-column="71" />
         </state>
       </provider>
     </entry>

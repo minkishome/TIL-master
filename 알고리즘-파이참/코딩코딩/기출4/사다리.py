@@ -1,5 +1,6 @@
 import copy
 def move(ls, cnt):  # cnt는 사다리를 몇개 추가 시킨 것인지를
+    global flag, res
     #garo = 0
     if cnt > 3:
         return
@@ -9,7 +10,7 @@ def move(ls, cnt):  # cnt는 사다리를 몇개 추가 시킨 것인지를
         first_garos = i
         seros = 0
         while 1:
-            # print(i, garos, seros, start_point, first_garos, cntt)
+            # print(i, garos, seros, start_point, first_garos)
             if ls[seros][garos] == 0:
                 seros += 1
                 if seros == sero:
@@ -18,28 +19,51 @@ def move(ls, cnt):  # cnt는 사다리를 몇개 추가 시킨 것인지를
                         break # 처음 순서와 같을 때 다음번째로 넘어간다.
                     else:
                         return
-            else:
-                if garos -1 >= 0 and ls[seros][garos-1] == 1:
-                    garos = garos-1
-                elif garos + 1 <= N and ls[seros][garos+1] == 1:
-                    garos = garos+1
+            else:  # 범위를 제대로 다시 정해야 한다.
+                print(12345)
+                if garos == 0:
+                    garos += 1
+                    if seros != sero:
+                        seros += 1
+                    print(garos, seros)
+                elif garos == N-1:
+                    garos -= 1
+                    if seros != sero:
+                        seros += 1
+                    print(garos, seros)
+                else:
+                    if ls[seros][garos-1] == 1:
+                        garos -= 1
+                        if seros != sero:
+                            seros += 1
+                        print(garos, seros)
+                    elif ls[seros][garos+1] == 1:
+                        garos += 1
+                        if seros != sero:
+                            seros += 1
+                        print(garos, seros)
+            if seros == sero:
+                if garos == first_garos:
+                    start_point += 1
+                    break # 처음 순서와 같을 때 다음번째로 넘어간다.
+                else:
+                    return
+
     flag = 1
+    print(flag)
     if tmp_cnt < cnt:
         res = cnt
         return
-    # ## for문이 다 돌았다는 건 이제 모든 i에서 각자 간 것이므로
-    # # res = cnt # 모든 경우의 수 돌고, 최소값을 뽑아줘야함
-    # flag =1
-    # # else:
-    # #     return
 
 def make_sadari(ls, cnt ):
+    print('hi')
     if flag:
         return
-    # if cnt > 3:
-    #     return -1
+
     else:
         lsls = ls.copy()
+        for z in lsls:
+            print(z)
         for i in range(sero):
             for j in range(N-1): # 어차피 끝까지 갈 필요가 없으니깐
                 if not lsls[i][j]:
@@ -55,19 +79,19 @@ def make_sadari(ls, cnt ):
     # 뭔가 끝낼 수 있는 로직이 필요.......
 
 N, M, H = map(int, input().split()) # 세로, 가로, 위치의 개수
-
+# N, M, H = 2, 0, 3
 if M > H:
     sero = M
     sadari = [[0]*N for _ in range(M)]
 else:
     sero = H
     sadari = [[0]*N for _ in range(H)]
-print(sero)
+
 
 res = 0
 flag = 0
 tmp_cnt = 9999
-print(sadari)
+# print(sadari)
 for _ in range(M):
     x, y= map(int, input().split())
     sadari[x-1][y], sadari[x-1][y-1] = 1, 1 # 사다리를 받는다.
@@ -79,8 +103,3 @@ else:
     result = make_sadari(sadari, 0)
     print(result)
 
-
-# 제일 먼저 move 함수를 실행한 다음에 make_sadari로 갔다가 다시 move를 실행해야 한다.
-
- # 지금 flag랑 다 바꿔야하고 while 안 깨지는거 해결해야한다
- #

@@ -54,8 +54,11 @@ def move(ls, cnt):  # cnt는 사다리를 몇개 추가 시킨 것인지를
     if tmp_cnt < cnt:
         res = cnt
         return
+    else:
+        return
 
 def make_sadari(ls, cnt ):
+    global res
     print('hi')
     if flag:
         return
@@ -69,13 +72,12 @@ def make_sadari(ls, cnt ):
                 if not lsls[i][j]:
                     lsls[i][j], lsls[i][j+1] = 1, 1
                     move(lsls, cnt+1)
-                    # 점 세개만 선택해서 그거 구하는 방법 해야함. 조합으로 하거나 DFS? 뭐 그런거 쓰거나
                     lsls[i][j], lsls[i][j + 1] = 0, 0
 
         if not flag: # flag 변화 없을때..
             return -1
         else:
-            return res
+            return cnt
     # 뭔가 끝낼 수 있는 로직이 필요.......
 
 N, M, H = map(int, input().split()) # 세로, 가로, 위치의 개수
@@ -101,5 +103,5 @@ if flag:
     print(0)
 else:
     result = make_sadari(sadari, 0)
-    print(result)
+    print(res, result)
 

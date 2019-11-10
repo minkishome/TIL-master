@@ -10,7 +10,7 @@ def move(ls, cnt):  # cnt는 사다리를 몇개 추가 시킨 것인지를
         first_garos = i
         seros = 0
         while 1:
-            # print(i, garos, seros, start_point, first_garos)
+            print(i, garos, seros, start_point, first_garos)
             if ls[seros][garos] == 0:
                 seros += 1
                 if seros == sero:
@@ -32,17 +32,18 @@ def move(ls, cnt):  # cnt는 사다리를 몇개 추가 시킨 것인지를
                         seros += 1
                     print(garos, seros)
                 else:
-                    if ls[seros][garos-1] == 1:
+                    if ls[seros][garos-1] == 1: # 왼쪽일 경우
                         garos -= 1
                         if seros != sero:
                             seros += 1
                         print(garos, seros)
-                    elif ls[seros][garos+1] == 1:
+                    elif ls[seros][garos+1] == 1: # 오른쪽일 경우
                         garos += 1
                         if seros != sero:
                             seros += 1
                         print(garos, seros)
             if seros == sero:
+                print('true', garos, first_garos, seros)
                 if garos == first_garos:
                     start_point += 1
                     break # 처음 순서와 같을 때 다음번째로 넘어간다.
@@ -70,14 +71,18 @@ def make_sadari(ls, cnt ):
         for i in range(sero):
             for j in range(N-1): # 어차피 끝까지 갈 필요가 없으니깐
                 if not lsls[i][j]:
-                    lsls[i][j], lsls[i][j+1] = 1, 1
-                    move(lsls, cnt+1)
-                    lsls[i][j], lsls[i][j + 1] = 0, 0
-
+                    if j == 0 and lsls[i][j+1] == 0:
+                        lsls[i][j], lsls[i][j+1] = 1, 1
+                        move(lsls, cnt+1)
+                        lsls[i][j], lsls[i][j + 1] = 0, 0
+                    elif lsls[i][j+1] != 1:
+                        lsls[i][j], lsls[i][j + 1] = 1, 1
+                        move(lsls, cnt + 1)
+                        lsls[i][j], lsls[i][j + 1] = 0, 0
         if not flag: # flag 변화 없을때..
             return -1
         else:
-            return cnt
+            return res
     # 뭔가 끝낼 수 있는 로직이 필요.......
 
 N, M, H = map(int, input().split()) # 세로, 가로, 위치의 개수
@@ -89,7 +94,7 @@ else:
     sero = H
     sadari = [[0]*N for _ in range(H)]
 
-
+visited = [ [0]*N for _ in range(sero)]
 res = 0
 flag = 0
 tmp_cnt = 9999
@@ -97,11 +102,14 @@ tmp_cnt = 9999
 for _ in range(M):
     x, y= map(int, input().split())
     sadari[x-1][y], sadari[x-1][y-1] = 1, 1 # 사다리를 받는다.
-
+for z in sadari:
+    print(z)
 move(sadari, 0)
 if flag:
     print(0)
+    print('asdf')
 else:
     result = make_sadari(sadari, 0)
-    print(res, result)
+    print(res)
+    print(result)
 

@@ -114,8 +114,6 @@ for tn in range(1, tc+1):
         tmp = [[i] + p for p in power_set]
         power_set += tmp
 
-
-
     for i in range(0,2 ** (len(people))):
         count_time(power_set[i], power_set[-1-i], stair)
     print('#%d %d' %(tn, min_val+1))

@@ -52,7 +52,7 @@ def find(depth, i1, j1, i2, j2):
                                 if iswall(kx, ky):
                                     find(depth+1, i2, j2, kx, ky)
                             return
-            # print(location)
+            print(location)
 
 tc = int(input())
 for tn in range(1, tc+1):

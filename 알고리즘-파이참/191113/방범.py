@@ -1,10 +1,52 @@
 import sys
 sys.stdin = open('방범.txt', 'r')
 
+def iswall(x,y):
+    return 0 <= x < N and 0 <= y < N
+
+def make_range(R):
+    global max_value, dxdys
+    for i in range(N):
+        for j in range(N):
+            cost = R**2 + (R - 1) ** 2
+            if R == 1:
+                if city[i][j] == 1:
+                    res = M - cost
+                else:
+                    pass
+            else:
+                cnt = 0
+                cnt2 = 0
+                visited = [ [0]*N for _ in range(N)]
+                visited[i][j] = 1
+                stack = [(i, j)]
+                for k in stack:
+                    if cnt2 == R:
+                        break
+                    if city[k[0]][k[1]] == 1:
+                        cnt += 1
+                        visited[k[0]][k[1]] = 1
+                    cnt2 += 1
+                    for dxdy in dxdys:
+                        dx, dy = k[0]*dxdy[0], k[1]*dxdy[1]
+                        if iswall(dx, dy) and not visited[dx][dy]:
+                            stack.append((dx,dy))
+
+                            # 범위 구해주고
+                res = cnt*M - cost
+
+    if res > max_value:
+        max_value = res
+
 tc = int(input())
-for tn in range(tc):
+for tn in range(1,tc+1):
     N, M = map(int, input().split()) # N = 도시 크기,  M 은 한 집이 낼 수 있는 최대 비용
     city = [list(map(int, input().split())) for _ in range(N)]
-    
 
-    cost = k**2 + (k-1)**2 # k는 여기서 방범회사가 만드는 비용
+    # 범위
+    dxdys = [(1,0), (-1,0), (0,1), (0,-1)]
+
+    max_value = 0
+    for n in range(1, (N)):
+        make_range(n)
+    print('#%d %d' %(tn, max_value))

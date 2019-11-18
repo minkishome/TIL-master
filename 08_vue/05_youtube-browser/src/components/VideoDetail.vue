@@ -1,14 +1,18 @@
 <template>
-    <div v-if="video">
-        <div class="embed-responsive embed-responsive-16by9">
-            <iframe :src="videoUrl" frameborder="0" class="embed-responsive-item"></iframe>
-        </div>
-        <div class="details">
-            <h4>{{ video.snippet.title }}</h4>
-            <p>{{ video.snippet.description }}</p>
-        </div>
+    <div class="col-lg-8">
+        <div v-if="video">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe :src="videoUrl" frameborder="0" class="embed-responsive-item"></iframe>
+            </div>
+
+            <div class="details">
+                <h4 v-html="video.snippet.title"></h4>
+                <p>{{ video.snippet.description }}</p>
+            </div>
+        </div>  
     </div>
 </template>
+
 <script>
 export default {
     name: 'VideoDetail',
@@ -22,6 +26,7 @@ export default {
     }
 }
 </script>
+
 <style scoped>
     .details {
         margin-top: 10px;

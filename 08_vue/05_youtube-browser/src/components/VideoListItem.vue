@@ -1,5 +1,5 @@
 <template>
-    <li @click="onVideoClick" class="list-group-item">        
+    <li @click="onVideoClick" class="list-group-item">
         <img :src="thumbnailUrl" class="mr-3" :alt="video.snippet.title">
         <div class="media-body">
             <span v-html="video.snippet.title"></span>
@@ -10,14 +10,14 @@
 
 <script>
 export default {
-    name: "VideoListItem",
+    name: 'VideoListItem',
     props: {
-        video:Object,
+        video: Object,
     },
-    methods: {
+    methods:{
         onVideoClick () {
             this.$emit('videoSelect', this.video)
-        } 
+        }
     },
     computed: {
         thumbnailUrl () {
@@ -30,13 +30,10 @@ export default {
 <style scoped>
     li {
         display: flex;
-        cursor:pointer;
-
-    }
-
-    li:hover {
-        background-color:#eee;
-
+        cursor: pointer;
     }
     
+    li:hover {
+        background-color: #eee;
+    }
 </style>

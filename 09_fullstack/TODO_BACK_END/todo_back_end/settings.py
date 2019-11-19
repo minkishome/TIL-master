@@ -45,7 +45,7 @@ REST_FRAMEWORK = {
     ),
 }
 
-# JWT 설정
+# JWT 설정 Json Wep Token
 JWT_AUTH = {
 		# JWT를 encrypt함.절대 외부 노출 금지, default는 settings.SECRET_KEY
     'JWT_SECRET_KEY': SECRET_KEY,
@@ -69,6 +69,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'todos',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -161,3 +163,4 @@ CORS_ORIGIN_ALLOW_ALL= True
 
 STATIC_URL = '/static/'
 
+AUTH_USER_MODEL = 'accounts.User'

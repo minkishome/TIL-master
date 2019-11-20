@@ -8,9 +8,9 @@ from rest_framework.decorators import api_view # require_methods
 from .models import Todo
 from .serializers import TodoSerializer
 
-@api_view(['GET'])
-def todo_list(request):
-    serializer = TodoSerializer
+# @api_view(['GET'])
+# def todo_list(request):
+#     serializer = TodoSerializer
     
 
 
@@ -18,7 +18,7 @@ def todo_list(request):
 def create_todo(request):
     serializer = TodoSerializer(data=request.data) # request.POST => Formdata
     if serializer.is_valid():
-        serializer.save()
+        serializer.save(user=request.user)
         # serializer.data => {'id':1, 'user_id':1, 'title': '밥먹기', 'completed': false}
         return Response(serializer.data)
     error = {

@@ -34,7 +34,7 @@
                     id="password" 
                     placeholder="비밀번호를 입력해주세요"
             >
-            <button @click="login" class="btn btn-primary">로그인</button> 
+            <button class="btn btn-primary">로그인</button> 
         </div>
         
     </form>
@@ -45,6 +45,7 @@
 
 <script>
 // import { METHODS } from 'http'
+import router from '../router'
 const axios = require('axios')
 export default {
     name: 'LoginForm',
@@ -64,14 +65,38 @@ export default {
             this.isLoading = true;
             if (this.checkUserInput()) {    
                 console.log("django 서버로 데이터를 보냅니다.");
-                axios.get('http://localhost:8000', this.credentials)
-                .then(res => console.log(res))
-                .catch(err => console.log(err));
-            }
-            else{
-                console.log("검증 실패. 다시 작성하세요.")
-            }
-            this.isLoading = false;
+                axios.post('http://localhost:8000/api-token-auth/', this.credentials)
+                .then(res => {
+                    this.isloading = false;
+                    this.$session.start();
+                    this.$session.set('jwt', res.data.token)
+                    // dispatch => action을 실행하는 methods
+                    this.$store.dispatch('login',res.data.token)
+
+                    router.push('/');
+                })
+                .catch(err => {
+                    if(!err.response) {
+                        this.errors.push('Network error......')
+                    }
+                    
+                    else if (err.response.status === 400) {
+                        this.errors.push('Invaild username or password');
+                    } 
+                    else if (err.response.status === 500 ) {
+                        this.errors.push('Internal Server error. Please try again');
+                    }
+                    else {
+                        this.errors.push('Some error occured')
+                    }
+                    this.isLoading = false;
+                });
+                
+            
+        }
+        else {
+            this.isLoadgin = false;
+        }
         },
         checkUserInput() {
             this.errors= [];

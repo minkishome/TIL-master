@@ -11,7 +11,21 @@ export default {
     name: 'Login',
     components: {
       LoginForm, 
-    }
+    },
+    // methods : {
+    //   isLoggedIn() {
+    //     this.$session.start();
+    //     if (this.$session.has('jwt')){ // jwt가 없으면 => login 안됐으면 
+    //       router.push('/login');
+
+    //     }
+    //   }
+      
+    // },
+    // create() {
+    //     this.isLoggedIn()
+    //   }
+
 }
 </script>
 

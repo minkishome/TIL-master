@@ -21,6 +21,6 @@ N, M = map(int,input().split())
 ls = [0] * (N+1)
 for i in range(1,N+1):
     ls[i] = i
-# visited = [False] * (N+2)
+visited = [False] * (N+2)
 ls3 = []
 find(ls3, 0)

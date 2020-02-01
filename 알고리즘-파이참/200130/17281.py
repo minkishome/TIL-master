@@ -1,25 +1,40 @@
-import itertools
-
-def make_point():
-    return
-
-def make_lineup(ls, z):
-    if z == 9:
-        return make_point()
-    else:
-        for i in range(1, 9):
-            check[i] = True
-            if i == 4:
-                continue
-            ls_lineup[i] = ls_hit[i] 
-
+from  itertools import permutations
 
 
 N = int(input())
-ls_hit = [list(map(int, input().split()) for _ in range(N)]
+ls_hit = [list(map(int, input().split())) for _ in range(N)]
 max_point = 0
-ls_base = [0,0,0,0] # 앞에서 부터 타석, 1,2,3
-ls_lineup = [0,0,0,0,0,0,0,0,0] # 타석 순서 0~8
-check = [False] * 9
-ls_lineup[3] = ls_hit[0] # 1번타자 4번으로 지정
+
+
+for i in permutations(range(1,9)):
+    turn = i[:3] + (0, ) + i[3:]
+    score = 0
+    player_num = 0
+    for inn in range(N):
+        p1, p2 ,p3 = 0, 0, 0
+        out_num = 0
+        while out_num != 3:
+            hitter = ls_hit[inn][turn[player_num]]
+            if hitter == 0:
+                out_num += 1
+            elif hitter == 1:
+                score += p3
+                p1, p2, p3 = 1, p1, p2
+            elif hitter == 2:
+                score += p2 + p3
+                p1, p2, p3 = 0, 1, p1
+            elif hitter == 3:
+                score += p1 + p2 + p3
+                p1, p2, p3 = 0, 0, 1
+            # elif hitter == 4:
+            else:
+                score += p1 + p2 + p3 + 1
+                p1, p2, p3 = 0, 0, 0
+            player_num += 1
+            if player_num == 9:
+                player_num = 0
+            
+    if score > max_point:
+        max_point = score
+print(max_point)
 

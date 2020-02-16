@@ -1,14 +1,6 @@
-a = 0 
-for i in range(5):
-    a += 1
-    if a == 3:
-        pass
-    a += 5
-print(a)
-a = 0
-for i in range(5):
-    a += 1
-    if a == 3:
-        continue
-    a += 5
-print(a)
+ls = [1,2,3,4]
+
+ls2 = ls
+ls2 = ls.copy()
+ls2[0] = 5
+print(ls2, ls)

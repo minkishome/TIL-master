@@ -1,7 +1,7 @@
 from collections import deque
 
 def iswall(x, y):
-    return 0 <= x < n and 0 <= y < m
+    return 0 <= x < m and 0 <= y < n
 
 # def move(i, j, cnt, horse_num):
 #     global min_cnt
@@ -31,11 +31,11 @@ def iswall(x, y):
 
 def move():
     q = deque()
-    q.append([0, 0, 0])
+    q.append((0, 0, 0))
     while q:
         x, y, z = q.popleft()
         num  = 4 if z == k else 12
-        if x == n -1 and y == m -1:
+        if x == m - 1 and y == n - 1:
             print(dist[x][y][z])
             return
         for i in range(num):
@@ -47,8 +47,7 @@ def move():
             if iswall(nx, ny) and not arr[nx][ny] and not dist[nx][ny][nz]:
                 dist[nx][ny][nz] = dist[x][y][z] + 1
                 q.append((nx, ny, nz))
-            # if nx >= n or nx < 0 or ny >= m or ny < 0:
-            #     continue
+
 
     print(-1)
 
@@ -56,9 +55,9 @@ def move():
 
 k = int(input())
 n, m = map(int, input().split())
-arr = [[0]*m for _ in range(n)]
-dist = [[[0] * (k+1) for _ in range(m)] for _ in range(n)]
-dxdy = [(1, 0), (0, 1), (0, -1), (-1, 0), (2, 1), (1, 2), (-1, 2), (1, -2), (-2,-1), (-1,-2), (-2,1), (-1, 2)] # 4까지는 일반, 5부터 12까지는 말
+arr = [list(map(int, input().split())) for _ in range(m)]
+dist = [[[0] * (k+1) for _ in range(n)] for _ in range(m)]
+dxdy = [(1, 0), (0, 1), (0, -1), (-1, 0), (2, 1), (1, 2), (-1, 2), (1, -2), (-2, -1), (-1, -2), (-2, 1), (-1, 2)] # 4까지는 일반, 5부터 12까지는 말
 
 
 

@@ -40,14 +40,15 @@ def move():
             return
         for i in range(num):
             nx, ny = x + dxdy[i][0], y + dxdy[i][1]
-            if i > 3:
-                nz = z + 1
-            else:
+            if i < 4:
                 nz = z
-            if iswall(nx, ny) and not arr[nx][ny] and not dist[nx][ny][nz]:
+            else:
+                nz = z + 1
+            if 0 > nx or m <= nx or 0 > ny or ny >= n:
+                continue
+            if not arr[nx][ny] and not dist[nx][ny][nz]:
                 dist[nx][ny][nz] = dist[x][y][z] + 1
                 q.append((nx, ny, nz))
-
 
     print(-1)
 
@@ -57,7 +58,7 @@ k = int(input())
 n, m = map(int, input().split())
 arr = [list(map(int, input().split())) for _ in range(m)]
 dist = [[[0] * (k+1) for _ in range(n)] for _ in range(m)]
-dxdy = [(1, 0), (0, 1), (0, -1), (-1, 0), (2, 1), (1, 2), (-1, 2), (1, -2), (-2, -1), (-1, -2), (-2, 1), (-1, 2)] # 4까지는 일반, 5부터 12까지는 말
+dxdy = [(1, 0), (0, 1), (0, -1), (-1, 0), (2, 1), (1, 2), (-1, 2), (1, -2), (-2, -1), (-1, -2), (-2, 1), (2, -1)] # 4까지는 일반, 5부터 12까지는 말
 
 
 

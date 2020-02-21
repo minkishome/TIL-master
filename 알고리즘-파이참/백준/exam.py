@@ -1,4 +1,3 @@
-ls = [1,2,3,4]
-print(ls[2])
-ls.sort()
+ls = (0,1,1)
 print(ls)
+print(ls[2])

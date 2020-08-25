@@ -1,4 +1,4 @@
-def permu(arr, depth):
+ def permu(arr, depth):
     global count
     if depth == M:
         count += 1

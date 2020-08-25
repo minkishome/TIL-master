@@ -10,3 +10,4 @@ print(f'최종 합계 {point}')
 print(f' 평균 {point}/4')
 """
 
+print('asdfgwerasdgiasdfjklasdl')
